@@ -30,11 +30,11 @@ Start by initializing your project folder. Open command prompt in projects folde
 3.	`git commit -m ‘your message’ to commit changes
 4.	`git remote add origin https://github.com/[your username]/[your repo].git` to connect with your github repo
 
-![The github repo](Fiverr/GithubRepo.PNG)
+![The github repo](fiverr/GithubRepo.PNG)
 
 5.	`git push -u origin master` push changes to github
 
-![The github repo](Fiverr/PushToGitHub.PNG)
+![The github repo](fiverr/PushToGitHub.PNG)
 
  
 
@@ -56,17 +56,17 @@ After you have login with your GitHub details you will see all your repository. 
 
 Press Save and Run, press again Save and run. After a while a pipeline will be build.
 
-![The github repo](Fiverr/Build.PNG)
+![The github repo](fiverr/Build.PNG)
  
 ### Create a Deployment Group
 
 Now you need to create a Deployment Group
 
- ![The github repo](Fiverr/DeploymentGroup.PNG)
+ ![The github repo](fiverr/DeploymentGroup.PNG)
  
 Enter a name and a description and click Create. 
 
- ![The github repo](Fiverr/DeploymentGroupScript.PNG)
+ ![The github repo](fiverr/DeploymentGroupScript.PNG)
 
 You will see a PowerShell wich you need to copy it but first check the personal access token checkbox. Copy and paste this script in PowerShell, it is a PowerShell script so you need to have installed PowerShell on your machine. Also, you need to add your access token to get authorized in your machine from Azure DevOps. The personal access token can be created by following the steeps: 
 1.	Press your icon profile in top right corner of the browser and select the security options.
@@ -74,44 +74,44 @@ You will see a PowerShell wich you need to copy it but first check the personal 
 3.	Enter the token name and check the Full Access checkbox
 4.	Press Create and copy the token 
  
- ![The github repo](Fiverr/Token.PNG)
+ ![The github repo](fiverr/Token.PNG)
 
 5.	Paste this token on your PowerShell to get authorize
   
 Now we to add an agent in your pipeline. Press on Releases button and you will see this image bellow:
 
- ![The github repo](Fiverr/SelectTemplateRelease.PNG)
+ ![The github repo](fiverr/SelectTemplateRelease.PNG)
 
 Select the template IIS website and SQL database deployment and press Apply. Name the stage that will show up. In the Artifacts side click the icon in the top right corner and enable the Continues deployment trigger by checking the checkbox Enabled.
 
-![The github repo](Fiverr/ICon.PNG)
+![The github repo](fiverr/ICon.PNG)
  
 Click the Deployment in IIS stage and make the configurations.
 First delete the SQL Deployment we are not going to need it.  Now see the image bellow and enter the values that needed. On the IIS Deployment tab first enter the Deployment Group you created before.
  
 
- ![The github repo](Fiverr/IISDeployment.PNG)
+ ![The github repo](fiverr/IISDeployment.PNG)
 
 Now press the Deployment in IIS tab wich is your stage enter the Website name and the Application pool name. 
   
-  ![The github repo](Fiverr/DeploymentInIIS.PNG)
+  ![The github repo](fiverr/DeploymentInIIS.PNG)
 
 You can find these in your IIS manger in your machine. The default names are Default Web Site and DefaultAppPool.
 
- ![The github repo](Fiverr/IISManager.PNG)
+ ![The github repo](fiverr/IISManager.PNG)
 Enter the names and Add bindings press three dots aside, now you need to add the port.
  
-  ![The github repo](Fiverr/port80.PNG)
+  ![The github repo](fiverr/port80.PNG)
 Enter the port 80 and press Ok
 Finally click save on the top. But we have not finished yet. We need to create a release and a automatic deployment. On the pipeline tab press create release 
  
-  ![The github repo](Fiverr/release.PNG)
+  ![The github repo](fiverr/release.PNG)
 
 If you done everything right you will see the image above. Press Create and after a while you will see the image bellow.
  
-  ![The github repo](Fiverr/success.PNG)
+  ![The github repo](fiverr/success.PNG)
 
 Go to the IIS Manager see and browse the web site.
 Check the path folder to see your published files C://inetpub/wwwroot and at the end see the site published in your IIS
  
-  ![The github repo](Fiverr/site.PNG)
+  ![The github repo](fiverr/site.PNG)
